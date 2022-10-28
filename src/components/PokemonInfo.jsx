@@ -22,16 +22,18 @@ const Pokemoninfo = ({ data }) => {
         <>
             {
                 (!data) ? "" : (
+                    
                     <div >
                         <h1>{data.name}</h1>
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
-                        <div className="abilities">
+                        <div className="types">
                             {
-                                data.abilities?.map(poke => {
+                                data.types?.map(item => {
                                     return (
-                                        <div key={poke.ability.name} >
+                                        <div key={item.type.name} >
                                             <div className="group">
-                                                <span>{poke.ability.name}</span>
+                                                <div>{item.type.name}</div>
+                                                <img className="group-img" src={`../../public/assets/img/${item.type.name}.png`} alt="Error" />
                                             </div>
                                         </div>
                                     )

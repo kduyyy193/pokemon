@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 #root {
   width: 100vw;
+  background-color: #302f2f;
 }
 
 
@@ -10,6 +11,7 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
+    color: white;
 }
 
 .container{
@@ -17,7 +19,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap-reverse;;
+    flex-wrap: wrap-reverse;
 }
 .left-content,.right-content{
     flex-basis: 40%;
@@ -83,22 +85,27 @@
     letter-spacing: 1px;
     font-size: 24px;
 }
-.abilities{
-    width: 70%;
+.types{
+    width: 40%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
 }
-.abilities .group{
-    background-color: #b74555;
+.types .group{
     color: white;
     padding: 0.5rem;
-    font-size: 12px;
-    border-radius: 8px;
     margin-left: 1rem;
+    width: 100%;
+    align-items: center;
 }
+
+.group-img {
+  width: max-content;
+  height: 96px !important;
+}
+
 .base-stat{
     margin-top: 2px;
     display: flex;
