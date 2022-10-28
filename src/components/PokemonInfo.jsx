@@ -1,7 +1,23 @@
 import React from "react";
 
-const Pokemoninfo = ({ data }) => {
+window.onscroll = () => {
+    const rightContent = document.querySelector(".right-content");
+    if (scrollY >= 200) {
+        if (rightContent) {
+            if (screen.width <= 1180) {
+                rightContent.style.top = '4%'
+            } else {
+                rightContent.style.top = '13%'
+            }
+        }
+    } else {
+        if (rightContent) {
+            rightContent.style.top = '35%'
+        }
+    }
+}
 
+const Pokemoninfo = ({ data }) => {
     return (
         <>
             {
@@ -27,10 +43,12 @@ const Pokemoninfo = ({ data }) => {
                                 data.stats.map(poke => {
                                     return (
                                         <div key={poke.stat.name} className="poke-stat">
-                                            <h3>
-                                                {poke.stat.name}:
-                                                {poke.base_stat}
-                                            </h3>
+                                            <div>
+                                                <div className="base-stat-name">{poke.stat.name}</div>
+                                                <div className="base-state-wrapper">
+                                                    <div className="base-state-power " style={{ "width": `${poke.base_stat * 2}px` }} >{poke.base_stat}</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     )
                                 })

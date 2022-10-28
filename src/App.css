@@ -3,6 +3,8 @@
 #root {
   width: 100vw;
 }
+
+
 *{
     padding: 0;
     margin: 0;
@@ -15,7 +17,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;;
 }
 .left-content,.right-content{
     flex-basis: 40%;
@@ -35,24 +37,36 @@
     box-sizing: border-box;
     margin-bottom: 20px;
 }
+
+.card:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+.card:active {
+  opacity: 0.9;
+}
+
+
 .right-content{
     text-align: center;
     flex-grow: 1;
     max-width: 50%;
     margin-bottom: 28px;
     position: fixed;
-    top: 30%;
-    right: 10%;
+    top: 35%;
+    right: 0%;
+    transition: ease-in-out;
 }
 
 .right-content div:first-child {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .right-content div h3 {
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .info-poke {
@@ -61,13 +75,13 @@
 }
 
 .right-content img{
-    margin: 1.5rem;
-    height: 160px;
+    margin: 2px;
+    height: 120px;
 }
 .right-content h1{
     font-weight: 500;
     letter-spacing: 1px;
-    font-size: 36px;
+    font-size: 24px;
 }
 .abilities{
     width: 70%;
@@ -86,14 +100,19 @@
     margin-left: 1rem;
 }
 .base-stat{
-    margin-top: 2rem;
+    margin-top: 2px;
     display: flex;
-    flex-direction: column;
-    justify-content:  center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .base-stat div {
-  margin-bottom: 2px;
+  margin: 0 2px 2px 4px;
 }
+.base-stat-name {
+  align-self: flex-start;
+}
+
 .btn-group{
     display: flex;
     align-items: center;
@@ -130,6 +149,7 @@
   border-radius: 8px;
   letter-spacing: 3px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .title-section input {
   background: #ffffff;
@@ -177,9 +197,34 @@
   border-color: #5fb9fe !important;
 }
 
+.base-state-wrapper {
+  width: 200px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 1px;
+}
 
+.base-state-power {
+  margin: 0 !important;
+  padding: 1px;
+  text-align: end;
+  height: 100%; 
+  border-radius: 6px;
+  max-width: 198px;
+  background-color: #3aa440;
+}
 
-@media screen and (max-width: 672px) {
+@media screen and (max-width: 916px) {
+  .right-content {
+    top: 35% ;
+    right: 0%;
+  }
+  .right-content h1 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 538px) {
   .left-content{
     margin-right: 20px;
     margin-left: 20px;
