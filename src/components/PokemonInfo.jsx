@@ -11,7 +11,7 @@ const Pokemoninfo = ({ data }) => {
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
                         <div className="abilities">
                             {
-                                data.abilities.map(poke => {
+                                data.abilities?.map(poke => {
                                     return (
                                         <div key={poke.ability.name} >
                                             <div className="group">

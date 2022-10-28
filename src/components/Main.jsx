@@ -5,6 +5,7 @@ import { apiPokemonUrl } from "../common/apiUrl";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import Search from "./Search";
 const Main = () => {
     const [pokeData, setPokeData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -12,6 +13,8 @@ const Main = () => {
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
     const [pokeDex, setPokeDex] = useState();
+    const [pokemonName, setPokemonName] = useState("")
+    const [errorName, setErrorName] = useState()
 
     const pokeFun = async () => {
         setLoading(true)
@@ -31,11 +34,27 @@ const Main = () => {
             })
         })
     }
+
+    const searchPokemon = async () => {
+        try {
+            const res = await axios.get(`${apiPokemonUrl}${pokemonName}`)
+            if (res.data) {
+                setPokeDex(res.data)
+                setErrorName("")
+            }
+        }
+        catch {
+            setErrorName("incorrect name!!!")
+            setPokemonName("")
+        }
+    }
     useEffect(() => {
         pokeFun();
     }, [url])
     return (
         <>
+
+            <Search searchPokemon={searchPokemon} setPokemonName={setPokemonName} pokemonName={pokemonName} setErrorName={setErrorName} errorName={errorName} />
             <div className="container">
                 <div className="left-content">
                     <Card pokemons={pokeData} loading={loading} Pokemoninfo={poke => setPokeDex(poke)} />
@@ -44,17 +63,17 @@ const Main = () => {
                         {prevUrl && <button onClick={() => {
                             setPokeData([])
                             setUrl(prevUrl)
-                        }}>Prev</button>}
+                        }}>Prev<img src="https://cdn.pixabay.com/photo/2022/04/02/21/59/pokeball-7107788__340.png" alt="ERROR" /></button>}
 
                         {nextUrl && <button onClick={() => {
                             setPokeData([])
                             setUrl(nextUrl)
-                        }}>Next</button>}
+                        }}>Next<img src="https://cdn.pixabay.com/photo/2022/04/02/21/59/pokeball-7107788__340.png" alt="ERROR" /></button>}
 
                     </div>
                 </div>
                 <div className="right-content">
-                    <Pokemoninfo data={pokeDex} />
+                    {pokeDex && <Pokemoninfo data={pokeDex} />}
                 </div>
             </div>
         </>

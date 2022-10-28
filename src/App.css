@@ -102,14 +102,20 @@
 .btn-group button{
     outline: none;
     border: none;
-    width: 150px;
     padding: 14px 10%;
     margin: 1rem;
     font-size: 16px;
     font-weight: 500;
     color: white;
-    background-color: #b74555;
+    background-color: #c1615b;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group img {
+  max-height: 20px;
 }
 
 .title-section {
@@ -127,21 +133,51 @@
 }
 .title-section input {
   background: #ffffff;
-  width: 50%;
+  min-width: 50%;
   height: 36px;
   font-size: 16px;
   outline: none;
   border-color: #5fb9fe;
   color: rgb(79, 77, 77);
   padding-left: 20px;
-  margin-bottom: 20px;
   border-radius: 8px;
+  margin: 20px 0 10px 0;
 }
 
-.title-section h2 {
+.title-section div {
+  display: flex;
+  align-items: center;
+}
+
+.title-section  span {
+  color: rgb(193, 46, 46);
+  font-size: 16px;
+  margin-left: 12px;
+  letter-spacing: normal;
+  text-transform: lowercase;
+}
+
+.title-section div h2 {
   color: white;
   margin-top: 10px;
 }
+
+.title-section div img {
+  max-width: 100px;
+}
+
+.title-section  button {
+  max-width: 50%;
+  font-size: 16px;
+  background-color: #c1615b;
+  outline: none;
+  margin-top: 10px;
+}
+.title-section  button:hover {
+  border-color: #5fb9fe !important;
+}
+
+
 
 @media screen and (max-width: 672px) {
   .left-content{
