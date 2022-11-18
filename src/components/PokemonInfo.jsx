@@ -17,7 +17,7 @@ window.onscroll = () => {
     }
 }
 
-const Pokemoninfo = ({ data }) => {
+const PokemonInfo = ({ data }) => {
     return (
         <>
             {
@@ -63,4 +63,4 @@ const Pokemoninfo = ({ data }) => {
         </>
     )
 }
-export default Pokemoninfo
+export default PokemonInfo
