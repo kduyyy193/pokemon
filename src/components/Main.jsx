@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import Pokemoninfo from "./Pokemoninfo";
+import Pokemoninfo from "./PokemonInfo";
 import { apiPokemonUrl } from "../common/apiUrl";
 import axios from "axios";
 import { useState } from "react";
