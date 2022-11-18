@@ -33,7 +33,7 @@ const PokemonInfo = ({ data }) => {
                                         <div key={item.type.name} >
                                             <div className="group">
                                                 <div>{item.type.name}</div>
-                                                <img className="group-img" src={`../../public/assets/img/${item.type.name}.png`} alt="Error" />
+                                                <img className="group-img" src={`assets/img/${item.type.name}.png`} alt="Error" />
                                             </div>
                                         </div>
                                     )
